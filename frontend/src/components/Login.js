@@ -10,17 +10,20 @@ function Login() {
     event.preventDefault();
     try {
         const response = await fetch('http://localhost:5000/login', {
-        method: 'POST'
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify({ username, password }),
+        credentials:"same-origin"
         });
         const data = await response.json();
-        console.log("data",Array(data))
+        console.log("data",data)
         if (data) {
-          if(data[0]==="USER_ADMIN"){
+          if(data.username==="admin"){
             // redirect to the home page or wherever you want
-            navigate("/users");
+            navigate("/admin");
           }else{
             // redirect to the home page or wherever you want
-            navigate("/resources");
+            navigate("/student");
           }
         } else {
             alert("user or password not fount");
@@ -31,8 +34,8 @@ function Login() {
   };
   return (
     <div>
-      <h2 style={{marginLeft:"39%",marginTop:"3%"}}> Page de Connexion</h2>
-      <img src="login.jpg" style={{width:"15%",marginLeft:"50%"}} alt='login'></img>
+      <h2 style={{marginLeft:"39%",marginTop:"5%"}}> Page de Connexion</h2>
+      <img src="login.jpg" style={{width:"10%",marginLeft:"50%",marginTop:"2%"}}></img>
       <form onSubmit={handleSubmit} style={{display: "flex", flexDirection : "column", alignItems : "center" }}>
       <label htmlFor="username">Nom d'Utilisateur</label>
       <input
@@ -43,7 +46,7 @@ function Login() {
         value={username}
         placeholder="username"
         onChange={(e) => setUsername(e.target.value)}
-        style={{ width: "25%",marginBottom:"2%"}}
+        style={{ width: "23%",marginBottom:"2%"}}
       />
 
       <label htmlFor="password">Mot de Passe</label>
@@ -55,7 +58,7 @@ function Login() {
         value={password}
         placeholder="password"
         onChange={(e) => setPassword(e.target.value)}
-        style={{ width: "25%", marginBottom:"2%"}}
+        style={{ width: "23%", marginBottom:"2%"}}
       />
       <input  type="submit" value=" Se Connecter" style={{ cursor: "pointer"}} />
     </form>

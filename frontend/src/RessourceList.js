@@ -6,6 +6,7 @@ const RessourceList = () => {
         axios('http://localhost:5000/resources').then(response=>{
             if(response.status===200){
                 const fetchData = response.data.rows;
+                console.log('fetchdata',fetchData)
                 setData(fetchData)
             }
         }).catch(err=>{
@@ -15,8 +16,8 @@ const RessourceList = () => {
   return (
     <div>RessourceList
         {
-        data.length>0 && data.map((item)=>
-            <div>{item}</div> )
+        
+            <div>{data.map()}</div> 
         } </div>
   )
 }

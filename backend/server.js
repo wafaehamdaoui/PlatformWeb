@@ -14,7 +14,7 @@ app.get('/resources',(req,res)=>{
                 password:'654321',
                 connectionString:'localhost/orcl'
             });
-            const result = await connection.execute('SELECT * FROM USER_ADMIN.Ressource ');
+            const result = await connection.execute('SELECT * FROM sys.Ressource ');
             return result.rows;
         } catch (error){
             return error;
@@ -52,7 +52,26 @@ app.get('/users',(req,res)=>{
 })
 
 app.post('/login',(req,res)=>{
-    async
+    async function fetchDatausers(){
+        try{
+            const connection = await oracledb.getConnection({
+                user:'user_admin',
+                password:'123456',
+                connectionString:'localhost/orcl'
+            });
+            const result = await connection.execute("SELECT * from dba_users where username = 'USER_ADMIN' ");
+            return result.rows;
+        } catch (error){
+            return error;
+
+        }
+    }
+    fetchDatausers().then(dbRes =>{
+        console.log('users',dbRes)
+        res.send(dbRes)
+    }).catch(err=>{
+        res.send(err)
+    })
 })
 app.listen(5000, () => {
     console.log('Server Listen to port 5000');

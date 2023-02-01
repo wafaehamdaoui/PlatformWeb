@@ -1,21 +1,25 @@
+import logo from './logo.svg';
 import './App.css';
-import React from "react";
-import { Routes, Route } from 'react-router-dom';
- 
-import RessourceList from './RessourceList';
-import UserList from './UserList';
-import Login from './login';
-// We use Route in order to define the different routes of our application
-const App = () => {
+
+function App() {
   return (
-    <div>
-      <Routes>
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/resources" element={<RessourceList />} />
-        <Route exact path="/users" element={<UserList />} />
-      </Routes>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
- };
-  
- export default App;
+}
+
+export default App;

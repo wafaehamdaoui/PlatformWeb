@@ -4,7 +4,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
  
 // We import all the components we need in our app //<Route exact path="/" element={<Home />} />
-
+import Home from "./components/home";
 import Admin from "./components/admin";
 import Student from "./components/student";
 import Login from "./components/login";
@@ -15,7 +15,7 @@ import About from "./components/about";
 import UserList from "./components/userList";
 import UserRecord from "./components/userRecords";
 import Update from "./components/update";
-import Register from "./components/register";
+import Adduser from "./components/Adduser";
 import EditMe from "./components/editme"
  
 const App = () => {
@@ -23,7 +23,8 @@ const App = () => {
    <div>
      
      <Routes>
-	     <Route exact path="/" element={<Login />} />
+       <Route exact path="/" element={<Home />} />
+	     <Route exact path="/login" element={<Login />} />
        <Route path="/admin" element={<Admin />} />
        <Route path="/student" element={<Student />} />
        <Route path="/student_record/" element={<UserRecord />} />
@@ -34,7 +35,7 @@ const App = () => {
        <Route path="/admin_record/" element={<RecordList />} />
        <Route path="/user/" element={<UserList />} />
        <Route path="/update/:id" element={<Update />} />
-       <Route path="/add" element={<Register />} />
+       <Route path="/adduser" element={<Adduser />} />
        <Route path="/admin_edit/:id" element={<Edit />} />
      </Routes>
    </div>

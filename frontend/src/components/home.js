@@ -1,17 +1,17 @@
 import Carousel from 'react-bootstrap/Carousel';
-
+import { Button } from 'react-bootstrap';
 function Home() {
   return (
     <Carousel variant="dark">
       <Carousel.Item>
+        
         <img
           className="d-block w-100"
-          src="ress2.jfif"
+          src="ress2.jpg"
           alt="First slide"
         />
-        <Carousel.Caption style={{backgroundColor:"rgba(1, 0, 0, 0.4)"}}>
-          <h2>UEMF Resources</h2>
-          <p style={{fontSize:"15px"}}>Est un système de réservation des ressources d'université</p>
+        <Carousel.Caption >
+        <Button href='/login' style={{backgroundColor:"rgba(1, 0, 0, 0.4)",fontSize:"40px",borderColor:"black", color:"lightgrey"}}>Se Connecter</Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -21,9 +21,8 @@ function Home() {
           alt="Second slide"
         />
         
-        <Carousel.Caption style={{backgroundColor:"rgba(1, 0, 0, 0.4)"}}>
-          <h2>UEMF Resources</h2>
-          <p style={{fontSize:"15px"}}>Est un système de réservation des ressources d'université</p>
+        <Carousel.Caption >
+        <Button href='/login' style={{backgroundColor:"rgba(1, 0, 0, 0.4)",fontSize:"40px",borderColor:"black", color:"lightgrey"}}>Se Connecter</Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -32,9 +31,8 @@ function Home() {
           src="terr.jpg"
           alt="Third slide"
         />
-        <Carousel.Caption style={{backgroundColor:"rgba(1, 0, 0, 0.4)"}}>
-        <h2>UEMF Resources</h2>
-          <p style={{fontSize:"15px"}}>Est un système de réservation des ressources d'université</p>
+        <Carousel.Caption >
+        <Button href='/login' style={{backgroundColor:"rgba(1, 0, 0, 0.4)",fontSize:"40px",borderColor:"black", color:"lightgrey"}}>Se Connecter</Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -43,9 +41,8 @@ function Home() {
           src="salle.jpg"
           alt="fourist slide"
         />
-        <Carousel.Caption style={{backgroundColor:"rgba(1, 0, 0, 0.4)"}}>
-        <h2>UEMF Resources</h2>
-          <p style={{fontSize:"15px"}}>Est un système de réservation des ressources d'université</p>
+        <Carousel.Caption >
+        <Button href='/login' style={{backgroundColor:"rgba(1, 0, 0, 0.4)",fontSize:"40px",borderColor:"black", color:"lightgrey"}}>Se Connecter</Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -54,9 +51,8 @@ function Home() {
           src="biblio.jpg"
           alt="Five slide"
         />
-        <Carousel.Caption style={{backgroundColor:"rgba(1, 0, 0, 0.4)"}}>
-        <h2>UEMF Resources</h2>
-          <p style={{fontSize:"15px"}}>Est un système de réservation des ressources d'université</p>
+        <Carousel.Caption >
+        <Button href='/login' style={{backgroundColor:"rgba(1, 0, 0, 0.4)",fontSize:"40px",borderColor:"black", color:"lightgrey"}}>Se Connecter</Button>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -9,7 +9,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify({ username, password }),
@@ -18,15 +18,15 @@ function Login() {
         const data = await response.json();
         console.log("data",data)
         if (data) {
-          if(data.username==="admin"){
+          if(data.role==="ADMIN"){
             // redirect to the home page or wherever you want
             navigate("/admin");
-          }else{
-            // redirect to the home page or wherever you want
-            navigate("/student");
-          }
-        } else {
+          }else if (data.role==="BASE") {
+             // redirect to the home page or wherever you want
+             navigate("/student");
+          } else {
             alert("user or password not fount");
+          }
         }
     } catch (err) {
         console.error(err);

@@ -2,13 +2,13 @@
 import { Route, Routes } from "react-router-dom";
  
 import Navbar from "./navbar";
-import Home from "./home";
+
 function Student(){
     return(
         <div>
      <Navbar />
      <Routes>
-     <Route exact path="/" element={<Home />} />
+     
      </Routes>
    </div>
     );

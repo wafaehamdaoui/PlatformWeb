@@ -44,6 +44,8 @@ Delete is the operation that allows us to remove records from a table.
 #### Database:
 * IN this project I created two Users
 <img width="834" alt="image" src="https://user-images.githubusercontent.com/75392302/216507896-3c6589f0-99f1-4f3b-95b9-4c2ce36f11d3.png">
+<img width="627" alt="image" src="https://user-images.githubusercontent.com/75392302/216508125-d86959f4-a9ab-43d4-b3cb-410af2bfa01d.png">
+
 The first user is an administrator with full access, modification and management rights <img width="257" alt="image" src="https://user-images.githubusercontent.com/75392302/216501101-e0799867-51c3-49e3-b046-d6240aeb2d88.png">
 The second user is a normal user having access only to the database and having a restriction to see certain tables <img width="313" alt="image" src="https://user-images.githubusercontent.com/75392302/216501383-e2c3a877-7bd9-4995-a66f-c925ec11ef21.png">
 

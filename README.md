@@ -261,7 +261,7 @@ Again an error occured because student_user do not have right to Update rows in 
 #### 2.Start the database in archive log mode, if it is not already running in that mode. To do this, we use the following command:
 <img width="455" alt="image" src="https://user-images.githubusercontent.com/75392302/216715454-299a98a6-298a-4d4e-a794-ebe9d3b63434.png">
 
-To solve this error we shutdown instance ant startup it by running the following commands
+To solve this error we shutdown instance and startup it by running the following commands
 
 <img width="385" alt="image" src="https://user-images.githubusercontent.com/75392302/216715851-7dd02966-0eda-4c48-acd2-145137fa6106.png">
 

@@ -210,10 +210,10 @@ Here my user is succefuly added
 
 #### Now let Test if we connect as student_user and we try to do operations which are not allowed to this user in the database.
 
-##### 1. Trying to add new User 
- first we connect as student user 
+#### 1. Trying to add new User 
+ First we connect to oracle database as student user 
  
- <img width="689" alt="image" src="https://user-images.githubusercontent.com/75392302/216643879-2e7a8c86-631f-482a-a2c0-bae18d032475.png">
+ <img width="686" alt="image" src="https://user-images.githubusercontent.com/75392302/216644027-73027b35-15eb-481c-b240-9dd12700311a.png">
  
  Now going to web interface and try to add user 
  
@@ -221,10 +221,10 @@ Here my user is succefuly added
 
 As we see an error occured because student_user do not have right to insert rows in my_users table.
 
-##### 2. Trying to add new Resource 
- First we connect as student user 
+#### 2. Trying to add new Resource 
+ First we connect to oracle database as student user 
  
-<img width="686" alt="image" src="https://user-images.githubusercontent.com/75392302/216644027-73027b35-15eb-481c-b240-9dd12700311a.png">
+<img width="685" alt="image" src="https://user-images.githubusercontent.com/75392302/216644793-6f90eab3-aaeb-4b8f-9024-33d6d1fa07f9.png">
  
 Now going to web interface and try to add Ressource 
 
@@ -233,7 +233,25 @@ Now going to web interface and try to add Ressource
 Again an error occured because student_user do not have right to insert rows in Ressource table.
 
  
+#### 3. Trying to Validate/reject a Resevation
 
+ First we connect to oracle database as student user 
+ 
+ <img width="680" alt="image" src="https://user-images.githubusercontent.com/75392302/216645488-1025bcf8-08a1-49f5-85e9-2858b34096e9.png">
+
+Now going to web interface and try to validate Reservation
+
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/75392302/216646337-de66721b-d1dc-423d-9de8-7780a8b168bb.png">
+
+Again an error occured because student_user do not have right to Update rows in Demandes table.
+
+#### Now to see all database transactions and modifications we can use Log Files
+
+## Generate Log File For each user :
+
+ Log file records all the INSERT, UPDATE, and DELETE query operations performed on a database.
+ 
+ Generate Log File for user_admin : 
 
 
 

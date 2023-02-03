@@ -99,27 +99,67 @@ UEMF resources is an application, which will be used by students and administrat
 <img width="876" alt="image" src="https://user-images.githubusercontent.com/75392302/216521675-27a5233d-1f45-43ec-a2e9-7d07504f099b.png">
 
 ##### If we log in as a simple user:
+
 <img width="875" alt="image" src="https://user-images.githubusercontent.com/75392302/216522385-ec2dd4e0-cf44-4f14-9939-633b4b039dd7.png">
 
 ##### we have the following pages :
 
 ##### Every student have the right to see his Reservations list to consulte their status(validated or not yet) :
+
 <img width="956" alt="image" src="https://user-images.githubusercontent.com/75392302/216522901-bbe7ae31-f206-46a2-bc6d-9c6d240ca29e.png">
 
-To get this list we need to connect to the database with the student user and select all rows of "Demamdes" table where the student is the current user as following:<img width="632" alt="image" src="https://user-images.githubusercontent.com/75392302/216599859-0e729aba-9d1b-4e91-a442-6c2e8eeeb229.png">
+To get this list we need to connect to the database with the student user and select all rows of "Demamdes" table where the student is the current user as following:
+
+<img width="632" alt="image" src="https://user-images.githubusercontent.com/75392302/216599859-0e729aba-9d1b-4e91-a442-6c2e8eeeb229.png">
 
 ##### As he can cancel a reservation.
-To cancel a reservation we get its id and then we connect to the database always as student user and delete Demandes row where the id egal to the geted one like following:<img width="631" alt="image" src="https://user-images.githubusercontent.com/75392302/216599236-8aa93b03-f412-4e39-8c87-7c176d7d502f.png">
+To cancel a reservation we get its id and then we connect to the database always as student user and then delete Demande's row where the id equal to the geted one like following:
 
-##### A student can also reserve a resource : <img width="878" alt="image" src="https://user-images.githubusercontent.com/75392302/216593524-6679ec18-f90d-49f6-b0ab-f31fca7980bf.png">
-To add a new reservation we need to connect to the database as student user and insert a new row in Demandes table :<img width="721" alt="image" src="https://user-images.githubusercontent.com/75392302/216601186-43752166-6053-4f65-b891-f43dd5962c0c.png">
+<img width="631" alt="image" src="https://user-images.githubusercontent.com/75392302/216599236-8aa93b03-f412-4e39-8c87-7c176d7d502f.png">
 
-##### All students have the right to see list of resources :<img width="934" alt="image" src="https://user-images.githubusercontent.com/75392302/216594494-19c63349-3153-4552-9acc-a64c4ac6b96e.png">
-To get list fo resources we connect again to the database as student user and we select all rows of "Ressource" table.<img width="500" alt="image" src="https://user-images.githubusercontent.com/75392302/216602346-f1c754bf-7153-460d-93d8-078a8b7c6529.png">
+##### A student can also reserve a resource : 
 
+<img width="878" alt="image" src="https://user-images.githubusercontent.com/75392302/216593524-6679ec18-f90d-49f6-b0ab-f31fca7980bf.png">
+
+To add a new reservation we need to connect to the database as student user and insert a new row in Demandes table :
+
+<img width="722" alt="image" src="https://user-images.githubusercontent.com/75392302/216602855-650bdcf4-8cb8-4737-bec6-1be7a060dad7.png">
+
+By default status reservation is "waiting" but it can be udated only by admin 
+
+##### All students have the right to see list of resources :
+<img width="934" alt="image" src="https://user-images.githubusercontent.com/75392302/216594494-19c63349-3153-4552-9acc-a64c4ac6b96e.png">
+
+To get list fo resources we connect again to the database as student user and we select all rows of "Ressource" table.
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/75392302/216602346-f1c754bf-7153-460d-93d8-078a8b7c6529.png">
 
 #### As we can see, a student has privileges limited in reading table contents and adding or deleting a reservation.
 
+### Now if we log in as an admin user:<img width="877" alt="image" src="https://user-images.githubusercontent.com/75392302/216603894-512a5962-f4e8-4db5-8262-2c824e6fd755.png">
+
+#### we have the following pages :
+
+##### The admin have the right to see All Reservations and validate or reject a reservation : <img width="960" alt="image" src="https://user-images.githubusercontent.com/75392302/216604923-3a64aaf2-05b3-4c51-9649-eb893ab6d7dc.png">
+
+To display All reservation we need to connect to the database as admin user and select all rows of Demandes table as following :
+
+<img width="540" alt="image" src="https://user-images.githubusercontent.com/75392302/216604738-0f9a45ad-7fac-4488-b115-0dab0b01a17b.png">
+
+* To validate a reservation we get its id and then we connect to the database always as admin user and Update Status column of the Demandes row ,where the id equal to the geted one, to "validated".
+
+<img width="740" alt="image" src="https://user-images.githubusercontent.com/75392302/216608157-77237229-9a33-4752-ba02-ef495a328a58.png">
+
+* To reject a reservation we get its id and then we connect to the database always as admin user and Update Status column of the Demandes row ,where the id equal to the geted one, to "Rejected".
+
+<img width="730" alt="image" src="https://user-images.githubusercontent.com/75392302/216608292-33fa0e5d-2b30-4e41-abde-950f824af5b5.png">
+
+##### The admin can also see list of resources and delete or add a reource  : 
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/75392302/216608689-16e9bca3-507c-404b-b2bf-82a42a3711dc.png">
+
+* To delete a resource we get its id and then we connect to the database always as admin user and the we delete Ressource's row where the id equal to the geted one like following:
+
+<img width="639" alt="image" src="https://user-images.githubusercontent.com/75392302/216609824-7302c37d-2664-4f42-ad7f-f479d346426b.png">
 
 
 

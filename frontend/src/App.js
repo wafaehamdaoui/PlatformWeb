@@ -10,13 +10,14 @@ import Student from "./components/student";
 import Login from "./components/login";
 import RecordList from "./components/recordList";
 import Edit from "./components/edit";
-import Create from "./components/create";
+import AddDemande from "./components/addDemande";
 import About from "./components/about";
 import UserList from "./components/userList";
 import UserRecord from "./components/userRecords";
 import Update from "./components/update";
 import Adduser from "./components/Adduser";
-import EditMe from "./components/editme"
+import AddResource from "./components/addResource";
+import All from "./components/All";
  
 const App = () => {
  return (
@@ -27,14 +28,14 @@ const App = () => {
 	     <Route exact path="/login" element={<Login />} />
        <Route path="/admin" element={<Admin />} />
        <Route path="/student" element={<Student />} />
-       <Route path="/student_record/" element={<UserRecord />} />
-       <Route path="/student_edit/:id" element={<EditMe />} />
-       <Route path="/student_create" element={<Create />} />
+       <Route path="/demandes/" element={<UserRecord />} />
+       <Route path="/addDemande" element={<AddDemande />} />
        <Route path="/about" element={<About />} />
-       
-       <Route path="/admin_record/" element={<RecordList />} />
+
+       <Route path="/resources/" element={<RecordList />} />
        <Route path="/user/" element={<UserList />} />
-       <Route path="/update/:id" element={<Update />} />
+       <Route path="/all" element={<All />} />
+       <Route path="/addResource" element={<AddResource />} />
        <Route path="/adduser" element={<Adduser />} />
        <Route path="/admin_edit/:id" element={<Edit />} />
      </Routes>

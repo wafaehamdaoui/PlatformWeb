@@ -6,12 +6,8 @@ const Record = (props) => (
    <td>{props.record[1]}</td>
    <td>{props.record[2]}</td>
    <td>
-   <button className="btn btn-link"
-     >
-       Edit
-     </button>| 
     <button className="btn btn-link"
-     >
+     ><img src="delete.png" style={{width:"20px"}} alt="g"></img>
        Delete
      </button>
    </td>
@@ -27,7 +23,7 @@ export default function UserList() {
      const response = await fetch(`http://localhost:5000/users`);
      const records = await response.json();
      if (!(records instanceof Array)) {
-       const message = `Error: ORA-01045: l'utilisateur USER n'a pas le privilège CREATE SESSION ; connexion refusée `;
+       const message = `Error: ORA-01045: l'utilisateur n'a pas ce privilège `;
        window.alert(message);
        return;
      }
@@ -39,42 +35,22 @@ export default function UserList() {
    return;
  }, [records.length]);
  
- /*/ This method will delete a record
+ // This method will delete a record
  async function deleteRecord(id) {
    await fetch(`http://localhost:5000/${id}`, {
      method: "DELETE"
    });
-   alert("Demande suprimée")
+   alert("user suprimée")
    const newRecords = records.filter((el) => el._id !== id);
    setRecords(newRecords);
  }
- // This method will validare a record
- async function validateRecord(id) {
-  await fetch(`http://localhost:5000/validate/${id}`, {
-    method: "POST"
-  });
-  alert("Email sent to !!")
-  //window.location.reload(true)  I tried this method by it give me a not found page that why i tried double navigate
-  navigate("/admin")
-  navigate("/admin/record")
-}
-// This method will reject a record
-async function rejectRecord(id) {
-  await fetch(`http://localhost:5000/reject/${id}`, {
-    method: "POST"
-  });
-  alert("Email sent to !!")
-  //window.location.reload()
-  navigate("/admin")
-  navigate("/admin/record")
-}*/
  // This method will map out the records on the table
  function recordList() {
    return records.map((record) => {
      return (
        <Record
          record={record}
-         //deleteRecord={() => deleteRecord(record._id)}
+         deleteRecord={() => deleteRecord(record._id)}
          //validateRecord={() => validateRecord(record._id)}
          //rejectRecord={() => rejectRecord(record._id)}
          key={record._id}
@@ -86,7 +62,8 @@ async function rejectRecord(id) {
  // This following section will display the table with the records of individuals.
  return (
    <div>
-     <h3 >Users List
+     <h3 style={{marginLeft:"40%", marginTop:"2.5%"}}>Users List
+     <a href="/adduser" ><img src="add.png" style={{width:"5%",marginLeft:"70%"}} alt="r"></img></a>
      </h3>
      <Table striped bordered hover >
       <thead>

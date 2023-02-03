@@ -34,15 +34,14 @@ export default function Adduser() {
 		body: JSON.stringify(newUser),
 	  })
 	  const data = await res.json();
-      if(data.error){
-         alert(data.error)
-		 navigate("/admin/register");
+      if(data.rows>0){
+		navigate("/user");
       }else{
-       navigate("/admin/user");
+		alert(data.error)
+		navigate("/adduser");
       }
 	}catch(error){
 		window.alert(error);
-		navigate("/admin");
 		return;
 	  };
 	
@@ -64,7 +63,7 @@ export default function Adduser() {
 					onChange={(e) => updateForm({ matricul: e.target.value })}
 					type="text"
 					placeholder="matricul"
-					style={{ width: "40%",marginLeft:"5%"}}
+					style={{ width: "40%",marginLeft:"5%", marginBottom:"0.5%"}}
 				/>
 				
 				<label htmlFor="email">Email</label>
@@ -74,7 +73,7 @@ export default function Adduser() {
 					onChange={(e) => updateForm({ email: e.target.value })}
 					type="email"
 					placeholder="Email"
-					style={{ width: "40%",marginLeft:"5%"}}
+					style={{ width: "40%",marginLeft:"5%", marginBottom:"0.5%"}}
 				/>
 				
 			<label htmlFor="username" >Nom d'Utilisateur</label>
@@ -84,7 +83,7 @@ export default function Adduser() {
 					onChange={(e) => updateForm({ username: e.target.value })}
 					type="text"
 					placeholder="username"
-					style={{ width: "40%",marginLeft:"5%"}}
+					style={{ width: "40%",marginLeft:"5%", marginBottom:"0.5%"}}
 				/>
 				
 				
@@ -95,14 +94,15 @@ export default function Adduser() {
 					onChange={(e) => updateForm({ password: e.target.value })}
 					type="password"
 					placeholder="Password"
-					style={{ width: "40%",marginLeft:"5%"}}
+					style={{ width: "40%",marginLeft:"5%", marginBottom:"0.5%"}}
 				/>
 		
-				<label htmlFor="password">Role</label>
+				<label htmlFor="role">Role</label>
 				<div className="col-md-6" style={{marginLeft:"15%"}}>
                 <select aria-label="Default select example" style={{ width: "80%",marginRight:"20%"}} onSelect={(e) => updateForm({ role: e.target.value })} onChange={(e) => updateForm({ role: e.target.value })}>
-                   <option value="base" selected={form.role === "base"}>BASE</option>
-                   <option value="admin" selected={form.role === "admin"}>ADMIN</option>
+				   <option >Select a role</option>
+				   <option value="BASE" selected={form.role === "BASE"}>Base</option>
+                   <option value="ADMIN" selected={form.role === "ADMIN"}>Admin</option>
                  </select>
                 </div>
 				<br />

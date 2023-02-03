@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 const Record = (props) => (
  <tr>
@@ -15,21 +14,28 @@ const Record = (props) => (
        onClick={() => {
          props.deleteRecord(props.record._id);
        }}
+     ><img src="ok.png" style={{width:"23px"}} alt="g"></img>
+       Validate
+     </button>
+     <button className="btn btn-link"
+       onClick={() => {
+         props.deleteRecord(props.record._id);
+       }}
      ><img src="no.jpg" style={{width:"20px"}} alt="g"></img>
-       Annuler
+       Reject
      </button>
    </td>
  </tr>
 );
  
-export default function UserRecord() {
+export default function All() {
  const [records, setRecords] = useState([]);
  const navigate = useNavigate();
  
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await fetch(`http://localhost:5000/userRecord`);
+     const response = await fetch(`http://localhost:5000/allRecord`);
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
@@ -48,7 +54,7 @@ export default function UserRecord() {
  
  // This method will delete a record
  async function deleteRecord(id) {
-   await fetch(`http://localhost:5000/delete/${id}`, {
+   await fetch(`http://localhost:5000/demande/${id}`, {
      method: "DELETE"
    });
  
@@ -72,9 +78,8 @@ export default function UserRecord() {
  // This following section will display the table with the records of individuals.
  return (
    <div>
-     <h3 style={{marginTop:"2%" , marginLeft:"37%"}}>My Resevations
-     <a href="/addDemande" ><img src="add.png" style={{width:"5%",marginLeft:"70%"}} alt="r"></img></a>
-     </h3>
+     <h3 style={{marginTop:"3%" , marginLeft:"40%"}}>All Resevations
+    </h3>
      <table className="table table-striped" style={{ marginTop: 20 }}>
        <thead>
          <tr>

@@ -35,7 +35,7 @@ function Login() {
   return (
     <div>
       <h2 style={{marginLeft:"39%",marginTop:"5%"}}> Page de Connexion</h2>
-      <img src="login.jpg" style={{width:"10%",marginLeft:"50%",marginTop:"2%"}}></img>
+      <img src="login.jpg" style={{width:"10%",marginLeft:"50%",marginTop:"2%"}} alt=""></img>
       <form onSubmit={handleSubmit} style={{display: "flex", flexDirection : "column", alignItems : "center" }}>
       <label htmlFor="username">Nom d'Utilisateur</label>
       <input

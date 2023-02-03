@@ -88,7 +88,7 @@ Those two role will help me afterwards.
 ##### connecxion
 We can connect to Oracle Database in node js using oracledb module so we need To install it <img width="391" alt="image" src="https://user-images.githubusercontent.com/75392302/216519903-c58e6d89-dd18-4af1-b2da-6bab64caa8ce.png">
 
-### User Interface:
+### User Interface & API:
 UEMF resources is an application, which will be used by students and administrator so i need to have two session of connection.
 
 * Home page:<img width="944" alt="image" src="https://user-images.githubusercontent.com/75392302/216521288-5987ce09-f5bf-4e85-92af-39b8835d99dc.png">
@@ -103,7 +103,22 @@ UEMF resources is an application, which will be used by students and administrat
 
 ##### we have the following pages :
 
-* User Reservation List :<img width="956" alt="image" src="https://user-images.githubusercontent.com/75392302/216522901-bbe7ae31-f206-46a2-bc6d-9c6d240ca29e.png">
+##### Every student have the right to see his Reservations list to consulte their status(validated or not yet) :
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/75392302/216522901-bbe7ae31-f206-46a2-bc6d-9c6d240ca29e.png">
+
+To get this list we need to connect to the database with the student user and select all rows of "Demamdes" table where the student is the current user as following:<img width="632" alt="image" src="https://user-images.githubusercontent.com/75392302/216599859-0e729aba-9d1b-4e91-a442-6c2e8eeeb229.png">
+
+##### As he can cancel a reservation.
+To cancel a reservation we get its id and then we connect to the database always as student user and delete Demandes row where the id egal to the geted one like following:<img width="631" alt="image" src="https://user-images.githubusercontent.com/75392302/216599236-8aa93b03-f412-4e39-8c87-7c176d7d502f.png">
+
+##### A student can also reserve a resource : <img width="878" alt="image" src="https://user-images.githubusercontent.com/75392302/216593524-6679ec18-f90d-49f6-b0ab-f31fca7980bf.png">
+To add a new reservation we need to connect to the database as student user and insert a new row in Demandes table :<img width="721" alt="image" src="https://user-images.githubusercontent.com/75392302/216601186-43752166-6053-4f65-b891-f43dd5962c0c.png">
+
+##### All students have the right to see list of resources :<img width="934" alt="image" src="https://user-images.githubusercontent.com/75392302/216594494-19c63349-3153-4552-9acc-a64c4ac6b96e.png">
+To get list fo resources we connect again to the database as student user and we select all rows of "Ressource" table.<img width="500" alt="image" src="https://user-images.githubusercontent.com/75392302/216602346-f1c754bf-7153-460d-93d8-078a8b7c6529.png">
+
+
+#### As we can see, a student has privileges limited in reading table contents and adding or deleting a reservation.
 
 
 

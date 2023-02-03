@@ -252,7 +252,17 @@ Again an error occured because student_user do not have right to Update rows in 
 
  Log file records all the INSERT, UPDATE, and DELETE query operations performed on a database.
  
+ To generate log file I will use `sloop` statement.
+ 
  ### Generate Log File for user_admin : 
+ To generate log file for user_admin to execute the following script.
+ 
+ <img width="609" alt="image" src="https://user-images.githubusercontent.com/75392302/216705190-553c6700-06cb-42d9-b548-90c32f5b7d05.png">
+
+To generate log file for user_admin to execute the following script.
+
+<img width="620" alt="image" src="https://user-images.githubusercontent.com/75392302/216706151-6e8dda4f-75d0-4172-aa2d-0fda51887101.png">
+
  ### Generate Log File for user_admin : 
 
 Now My project is ready to deploy it using for examples render web site, we just need to get license to migrate our database to oracle database cloud.

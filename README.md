@@ -2,8 +2,8 @@
 ## Introduction :
 Within this project, I am going to present to you an example of CRUD Application With Node js and Oracle database in the contexe of smart university.
 ### Problem:
-As soon as I submitted my application to my university, I noticed that it has a soprtive infrastructure, digital infrastructures and workspaces, 
-but it has a limited capacity so it is possible that you go to the university and you cannot find available space and therefore you have to go to the security 
+As soon as I submitted my application to my university, I noticed that it has a sportive infrastructure, digital infrastructures and workspaces, 
+but it has a limited capacity so it is possible that you go to the university and you can not find available space and therefore you have to go to the security 
 agent and make the reservation before one or two days. So as a web developement student, to solve this problem I decide to create an application which allows us,
 the students, to reserve the different resources of the university either the sports halls, or the sports fields, or the workspaces, or the computers, using the skills we learned in Node.js and Oracle database trainings.
 
@@ -44,7 +44,7 @@ Delete is the operation that allows us to remove records from a table.
 <img width="834" alt="image" src="https://user-images.githubusercontent.com/75392302/216507896-3c6589f0-99f1-4f3b-95b9-4c2ce36f11d3.png">
 <img width="627" alt="image" src="https://user-images.githubusercontent.com/75392302/216508125-d86959f4-a9ab-43d4-b3cb-410af2bfa01d.png">
 
-The first user is an administrator with full access, modification and management rights 
+The first user is an administrator with have full access, modification and management rights .
 
 <img width="391" alt="image" src="https://user-images.githubusercontent.com/75392302/216508594-5765de1f-0c11-4fec-b110-3df32ff32da8.png">
 
@@ -56,7 +56,7 @@ The second user is a normal user having access only to the database and having a
 ##### Users
 <img width="525" alt="image" src="https://user-images.githubusercontent.com/75392302/216517707-a2817387-2e81-49f8-a2cb-3e3b29f2ef91.png">
 
-And i will insert to it the two users I have just created 
+And I will insert to it the two users I have just created 
 <img width="837" alt="image" src="https://user-images.githubusercontent.com/75392302/216517845-064bb320-6803-470f-8b49-0bdfab88f813.png">
 
 This table will help me to control access to my web app. Login part need to get entred username and password and compare them with existing users.
@@ -96,6 +96,11 @@ UEMF resources is an application, which will be used by students and administrat
 
 * Login page:
 <img width="876" alt="image" src="https://user-images.githubusercontent.com/75392302/216521675-27a5233d-1f45-43ec-a2e9-7d07504f099b.png">
+
+In the back end I get username and password entred, I connect to oracle db as privilaged user and select row in my_users table where the username and password equal to the entered ones if I got a row so login is succesful if I got any row the login is failed as following
+
+<img width="671" alt="image" src="https://user-images.githubusercontent.com/75392302/216726126-507d4852-456f-46e0-a823-4726a0d0871e.png">
+
 
 ##### If we log in as a simple user:
 

@@ -258,12 +258,20 @@ Again an error occured because student_user do not have right to Update rows in 
  To generate log file for user_admin to execute the following script.
  
  <img width="609" alt="image" src="https://user-images.githubusercontent.com/75392302/216705190-553c6700-06cb-42d9-b548-90c32f5b7d05.png">
-
+ 
+ Here is the operations done by user_admin:
+ 
+ <img width="740" alt="image" src="https://user-images.githubusercontent.com/75392302/216707069-758d22fa-ae48-490a-b919-8ff271486cae.png">
+ 
+ ### Generate Log File for user_student :
+ 
 To generate log file for user_admin to execute the following script.
 
 <img width="620" alt="image" src="https://user-images.githubusercontent.com/75392302/216706151-6e8dda4f-75d0-4172-aa2d-0fda51887101.png">
 
- ### Generate Log File for user_admin : 
+Here is some operations done by user_student:
+
+ <img width="775" alt="image" src="https://user-images.githubusercontent.com/75392302/216706495-bd63f4fa-e03b-420f-8cab-749a225c0b79.png">
 
 Now My project is ready to deploy it using for examples render web site, we just need to get license to migrate our database to oracle database cloud.
 

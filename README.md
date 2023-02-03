@@ -98,9 +98,11 @@ UEMF resources is an application, which will be used by students and administrat
 * Login page:
 <img width="876" alt="image" src="https://user-images.githubusercontent.com/75392302/216521675-27a5233d-1f45-43ec-a2e9-7d07504f099b.png">
 
-##### If we log in as a simple user we have the following pages :
+##### If we log in as a simple user:
 <img width="875" alt="image" src="https://user-images.githubusercontent.com/75392302/216522385-ec2dd4e0-cf44-4f14-9939-633b4b039dd7.png">
+
 ##### we have the following pages :
+
 User Reservation List :<img width="956" alt="image" src="https://user-images.githubusercontent.com/75392302/216522901-bbe7ae31-f206-46a2-bc6d-9c6d240ca29e.png">
 
 

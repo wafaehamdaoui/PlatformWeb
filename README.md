@@ -157,6 +157,10 @@ To display All reservation we need to connect to the database as admin user and 
 ##### The admin can also see list of resources and delete or add a reource  : 
 <img width="956" alt="image" src="https://user-images.githubusercontent.com/75392302/216608689-16e9bca3-507c-404b-b2bf-82a42a3711dc.png">
 
+To get list fo resources we connect again to the database as admin user and we select all rows of "Ressource" table.
+
+<img width="518" alt="image" src="https://user-images.githubusercontent.com/75392302/216634810-7b84a20f-a751-4085-9381-0444b5363c84.png">
+
 * To delete a resource we get its id and then we connect to the database always as admin user and the we delete Ressource's row where the id equal to the geted one like following:
 
 <img width="654" alt="image" src="https://user-images.githubusercontent.com/75392302/216625364-20afee55-47fe-4457-be43-bb2804f0bed2.png">
@@ -204,14 +208,31 @@ Here my user is succefuly added
 
 <img width="983" alt="image" src="https://user-images.githubusercontent.com/75392302/216632804-7085c59f-66d8-4ab9-8d53-838efdb60b6e.png">
 
-##### The admin have the right to see list of resources and modify it:
-<img width="934" alt="image" src="https://user-images.githubusercontent.com/75392302/216594494-19c63349-3153-4552-9acc-a64c4ac6b96e.png">
+#### Now let Test if we connect as student_user and we try to do operations which are not allowed to this user in the database.
 
-To get list fo resources we connect again to the database as admin user and we select all rows of "Ressource" table.
+##### 1. Trying to add new User 
+ first we connect as student user 
+ 
+ <img width="689" alt="image" src="https://user-images.githubusercontent.com/75392302/216643879-2e7a8c86-631f-482a-a2c0-bae18d032475.png">
+ 
+ Now going to web interface and try to add user 
+ 
+ <img width="873" alt="image" src="https://user-images.githubusercontent.com/75392302/216644495-91fc79b0-db80-45a2-8eeb-72a22f9d73f9.png">
 
-<img width="518" alt="image" src="https://user-images.githubusercontent.com/75392302/216634810-7b84a20f-a751-4085-9381-0444b5363c84.png">
+As we see an error occured because student_user do not have right to insert rows in my_users table.
 
+##### 2. Trying to add new Resource 
+ First we connect as student user 
+ 
+<img width="686" alt="image" src="https://user-images.githubusercontent.com/75392302/216644027-73027b35-15eb-481c-b240-9dd12700311a.png">
+ 
+Now going to web interface and try to add Ressource 
 
+<img width="878" alt="image" src="https://user-images.githubusercontent.com/75392302/216643329-75c309b5-a512-4ef5-8a17-ddd78995a69e.png">
+
+Again an error occured because student_user do not have right to insert rows in Ressource table.
+
+ 
 
 
 

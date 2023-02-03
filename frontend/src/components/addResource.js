@@ -35,10 +35,10 @@ export default function AddResource() {
       if(data.rows>0){
 		navigate("/resources");
       }else{
-		alert(data.error)
+		alert("Error: ORA-01031: privilèges insuffisants");
       }
 	}catch(error){
-		window.alert(error);
+		window.alert("Error: ORA-01031: privilèges insuffisants");
 		return;
 	  };
 	

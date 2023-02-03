@@ -37,7 +37,7 @@ export default function Adduser() {
       if(data.rows>0){
 		navigate("/user");
       }else{
-		alert(data.error)
+		alert("Error: ORA-01031: privilèges insuffisants")
 		navigate("/adduser");
       }
 	}catch(error){
@@ -54,9 +54,9 @@ export default function Adduser() {
 }
 	return (
 		<div>
-			<h1 style={{marginLeft:"34%",marginTop:"5%"}}>Créer Nouveau Utilisateur </h1>
+			<h1 style={{marginLeft:"40%",marginTop:"5%"}}>Add New User </h1>
 			<form onSubmit={onSubmit} style={{display: "flex", flexDirection : "column", alignItems : "center",marginTop:"3%" }}>
-			<label htmlFor="matricul">Matricule</label>
+			<label htmlFor="matricul">Registration Number</label>
 				<input
 				    class="form-control"
 					value={form.matricul}
@@ -76,7 +76,7 @@ export default function Adduser() {
 					style={{ width: "40%",marginLeft:"5%", marginBottom:"0.5%"}}
 				/>
 				
-			<label htmlFor="username" >Nom d'Utilisateur</label>
+			<label htmlFor="username" >User Name</label>
 				<input
 				    class="form-control"
 					value={form.username}
@@ -87,7 +87,7 @@ export default function Adduser() {
 				/>
 				
 				
-				<label htmlFor="password">Mot de Passe</label>
+				<label htmlFor="password">Password</label>
 				<input
 				    class="form-control"
 					value={form.password}

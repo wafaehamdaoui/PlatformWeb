@@ -8,6 +8,7 @@ app.use(express.json())
 app.get('/',(req,res)=>{
     res.send('hello')
 })
+
 app.get('/resources',(req,res)=>{
     async function fetchDataResources(){
         try{
@@ -51,13 +52,14 @@ app.get('/users',(req,res)=>{
         res.send(err)
     })
 })
+const username='wafae';
 
 app.get('/userRecord',(req,res)=>{
-    const username='wafae'
+
     async function fetchDataResources(){
         try{
             const connection = await oracledb.getConnection({
-                user:'user_admin',
+                user:'user_studentS',
                 password:'123456',
                 connectionString:'localhost/orcl'
             });
@@ -148,8 +150,8 @@ app.post('/addResource',(req,res)=>{
     async function fetchDatausers(){
         try{
             const connection = await oracledb.getConnection({
-                user:'user_admin',
-                password:'123456',
+                user:'user_student',
+                password:'654321',
                 connectionString:'localhost/orcl'
             });
             const result0 = await connection.execute('alter session set "_oracle_script"=true');
@@ -171,28 +173,25 @@ app.post('/addResource',(req,res)=>{
 
 app.post('/adduser',(req,res)=>{
     const {matricul,email ,username, role, password } = req.body;
-    console.log("body",username)
-    user = toString(username)
     async function fetchDatausers(){
         try{
             const connection = await oracledb.getConnection({
-                user:'user_admin',
-                password:'123456',
+                user:'user_student',
+                password:'654321S',
                 connectionString:'localhost/orcl'
             });
             const result0 = await connection.execute('alter session set "_oracle_script"=true');
+            const result1 = await connection.execute('create user '+username+' identified by "'+password+'"');
             if (role=="ADMIN") {
-               // const result1 = await connection.execute('grant admin_role to'+username);
+                const result3 = await connection.execute('grant admin_role to'+username);
             } else {
-               // const result2 = await connection.execute('grant student_role to'+username);
+                const result2 = await connection.execute('grant student_role to'+username);
             }
-            const result3 = await connection.execute('create user '+username+' identified by "'+password+'"');
             const result = await connection.execute("INSERT INTO sys.my_users VALUES ("+parseInt(matricul)+",'"+email+"','"+username+"','"+role+"','"+password+"')");
             console.log("Number of inserted rows:", result.rowsAffected);
             return result.rowsAffected;
         } catch (error){
             return error;
-           
         }
     }
     fetchDatausers().then(dbRes =>{
@@ -205,18 +204,18 @@ app.post('/adduser',(req,res)=>{
 
 
 app.post('/addDemande',(req,res)=>{
-    let i=0;
-    const {matricul,name ,resource, duree, date } = req.body;
+    const {id,matricul,name ,resource, duree, date } = req.body;
     var datee = new Date(date);
     async function fetchDatausers(){
         try{
             const connection = await oracledb.getConnection({
-                user:'user_admin',
+                user:'user_student',
                 password:'123456',
                 connectionString:'localhost/orcl'
             });
             const result0 = await connection.execute('alter session set "_oracle_script"=true');
-            const result = await connection.execute("INSERT INTO sys.Demandes VALUES (1,"+parseInt(matricul)+",'"+name+"','"+resource+"','"+duree+"','"+date+"',Waiting)");
+            const result = await connection.execute("INSERT INTO sys.Demandes VALUES ("+parseInt(id)+","+parseInt(matricul)
+                                                       +",'"+name+"','"+resource+"','"+duree+"','"+date+"',Waiting)");
             console.log("Number of inserted rows:", result.rowsAffected);
             i+=1;
             return result.rowsAffected;
@@ -234,9 +233,34 @@ app.post('/addDemande',(req,res)=>{
 })
 
 
-app.post('/demande',(req,res)=>{
-    console.log("body",username)
-    user = toString(username)
+app.post('/validate/:id',(req,res)=>{
+    let id =  ObjectId(req.params.id) ;
+    async function fetchDatausers(){
+        try{
+            const connection = await oracledb.getConnection({
+                user:'user_student',
+                password:'654321',
+                connectionString:'localhost/orcl'
+            });
+            const result0 = await connection.execute('alter session set "_oracle_script"=true');
+            const result = await connection.execute('UPDATE sys.Demandes SET status = "Validated" WHERE ider ='+parseInt(id));
+            console.log("Number of inserted rows:", result.rowsAffected);
+            return result.rowsAffected;
+        } catch (error){
+            return error;
+           
+        }
+    }
+    fetchDatausers().then(dbRes =>{
+        console.log('add',dbRes)
+        res.json({rows:dbRes})
+    }).catch(err=>{
+        res.json({error:err})
+    })
+})
+
+app.post('/reject/:id',(req,res)=>{
+    let id =  ObjectId(req.params.id) ;
     async function fetchDatausers(){
         try{
             const connection = await oracledb.getConnection({
@@ -245,7 +269,7 @@ app.post('/demande',(req,res)=>{
                 connectionString:'localhost/orcl'
             });
             const result0 = await connection.execute('alter session set "_oracle_script"=true');
-            const result = await connection.execute("INSERT INTO sys.my_users VALUES ("+parseInt(matricul)+",'"+email+"','"+username+"','"+role+"','"+password+"')");
+            const result = await connection.execute('UPDATE sys.Demandes SET status = "Rejected" WHERE ider ='+parseInt(id));
             console.log("Number of inserted rows:", result.rowsAffected);
             return result.rowsAffected;
         } catch (error){
@@ -317,7 +341,8 @@ app.get("/record/:id",(req, res) => {
         res.json({error:err})
     })
 });
-app.delete("/delete/:id",(req, res) => {
+
+app.delete("/deleteResource/:id",(req, res) => {
     let myquery = { _id: ObjectId(req.params.id) };
     async function fetchDatausers(){
         try{
@@ -327,7 +352,8 @@ app.delete("/delete/:id",(req, res) => {
                 connectionString:'localhost/orcl'
             });
             const result0 = await connection.execute('alter session set "_oracle_script"=true');
-            const result = await connection.execute("delete from sys.Demandes where id= "+parseInt(myquery));
+            const result = await connection.execute("delete from sys.Ressource where id= "+parseInt(myquery));
+            
             return result;
         } catch (error){
             return error;

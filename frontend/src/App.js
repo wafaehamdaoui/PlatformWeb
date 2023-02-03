@@ -14,7 +14,7 @@ import AddDemande from "./components/addDemande";
 import About from "./components/about";
 import UserList from "./components/userList";
 import UserRecord from "./components/userRecords";
-import Update from "./components/update";
+import See from "./components/See";
 import Adduser from "./components/Adduser";
 import AddResource from "./components/addResource";
 import All from "./components/All";
@@ -37,7 +37,7 @@ const App = () => {
        <Route path="/all" element={<All />} />
        <Route path="/addResource" element={<AddResource />} />
        <Route path="/adduser" element={<Adduser />} />
-       <Route path="/admin_edit/:id" element={<Edit />} />
+       <Route path="/resourcesList" element={<See />} />
      </Routes>
    </div>
  );

@@ -73,7 +73,7 @@ export default function UserRecord() {
  return (
    <div>
      <h3 style={{marginTop:"2%" , marginLeft:"37%"}}>My Resevations
-     <a href="/addDemande" ><img src="add.png" style={{width:"5%",marginLeft:"70%"}} alt="r"></img></a>
+     <a href="/addDemande" ><img src="add.png" style={{width:"5%",marginLeft:"65%"}} alt="r"></img></a>
      </h3>
      <table className="table table-striped" style={{ marginTop: 20 }}>
        <thead>

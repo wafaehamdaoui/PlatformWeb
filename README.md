@@ -47,9 +47,12 @@ Delete is the operation that allows us to remove records from a table.
 <img width="627" alt="image" src="https://user-images.githubusercontent.com/75392302/216508125-d86959f4-a9ab-43d4-b3cb-410af2bfa01d.png">
 
 The first user is an administrator with full access, modification and management rights 
+
 <img width="391" alt="image" src="https://user-images.githubusercontent.com/75392302/216508594-5765de1f-0c11-4fec-b110-3df32ff32da8.png">
 
-The second user is a normal user having access only to the database and having a restriction to see certain tables <img width="313" alt="image" src="https://user-images.githubusercontent.com/75392302/216501383-e2c3a877-7bd9-4995-a66f-c925ec11ef21.png">
+The second user is a normal user having access only to the database and having a restriction to see certain tables 
+<img width="504" alt="image" src="https://user-images.githubusercontent.com/75392302/216508826-1f1f0418-3735-4ef4-aab4-73d24586b91a.png">
+
 
 * And then I will connect as user_admin and I will create three table that I will need to manage my web app which are: 
 ##### Users

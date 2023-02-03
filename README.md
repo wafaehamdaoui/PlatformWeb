@@ -1,20 +1,18 @@
 # Platform Web
 ## Introduction :
-Within this project, I am going to present to you an example of CRUD Application With Node js and Oracle database in the contexe of smart university, 
-and I will show you how to use it correctly.
+Within this project, I am going to present to you an example of CRUD Application With Node js and Oracle database in the contexe of smart university.
 ### Problem:
 As soon as I submitted my application to my university, I noticed that it has a soprtive infrastructure, digital infrastructures and workspaces, 
 but it has a limited capacity so it is possible that you go to the university and you cannot find available space and therefore you have to go to the security 
 agent and make the reservation before one or two days. So as a web developement student, to solve this problem I decide to create an application which allows us,
-the students, to reserve the different resources of the university either the sports halls, or the sports fields, or the workspaces, or the computers, using the skills we learned in 
-Node.js and Oracle database trainings.
+the students, to reserve the different resources of the university either the sports halls, or the sports fields, or the workspaces, or the computers, using the skills we learned in Node.js and Oracle database trainings.
 
 ### Solution 
 The solution I propose is named uemf resources. which is a web application that allows uemf students to reserve any resource in one click.
 
 Therefore, the programming of this web application will be carried out in Node js for several reasons like: run JavaScript in a single thread, and the processing is asynchronous...
 
-For database i will use oracle because it provides a rich set of default security features to manage user accounts, authentication, privileges wich help to protect data...
+For database I will use oracle because it provides a rich set of default security features to manage user accounts, authentication, privileges wich help to protect data...
 
 Regarding my work environment, I work under windows, I use Visual Studio Code (and sql developer to manage database).
 
@@ -39,7 +37,7 @@ Update is the operation that allows us to modify existing data and records withi
 #### Delete
 Delete is the operation that allows us to remove records from a table.
 
-### CRUD apps consist of three parts; the `database`, `user interface`, and `APIs/Backend`.
+### CRUD apps consist of three parts; the `database`, `user interface`, and `API/Backend`.
 
 #### Database:
 * IN this project I created two Users
@@ -54,7 +52,7 @@ The second user is a normal user having access only to the database and having a
 <img width="504" alt="image" src="https://user-images.githubusercontent.com/75392302/216508826-1f1f0418-3735-4ef4-aab4-73d24586b91a.png">
 
 
-* And then I will connect as user_admin and I will create three table that I will need to manage my web app which are: 
+* And then I will connect as privilaged user and I will create three table that I will need to manage my web app which are: 
 ##### Users
 <img width="525" alt="image" src="https://user-images.githubusercontent.com/75392302/216517707-a2817387-2e81-49f8-a2cb-3e3b29f2ef91.png">
 
@@ -71,11 +69,11 @@ That is why I will store users in this table.
 
 ##### Ressources
 <img width="539" alt="image" src="https://user-images.githubusercontent.com/75392302/216518361-92409229-ba50-45f6-ab75-704c6449e29d.png">
-In this table i will store diffrents resources added by admin .
+In this table I will store diffrents resources added by admin .
 
 ##### Demandes
 <img width="877" alt="image" src="https://user-images.githubusercontent.com/75392302/216518457-ea80b93b-2370-4c45-9bec-b6a97e9a2909.png">
-In this table i will store reservations made by students.
+In this table I will store reservations made by students.
 
 * Also I will create two roles:
 1. admin role with all privilages associated to user_admin
@@ -139,7 +137,7 @@ To get list fo resources we connect again to the database as student user and we
 
 ### Now if we log in as an admin user:<img width="877" alt="image" src="https://user-images.githubusercontent.com/75392302/216603894-512a5962-f4e8-4db5-8262-2c824e6fd755.png">
 
-#### we have the following pages :
+#### We have the following pages :
 
 ##### The admin have the right to see All Reservations and validate or reject a reservation : <img width="960" alt="image" src="https://user-images.githubusercontent.com/75392302/216604923-3a64aaf2-05b3-4c51-9649-eb893ab6d7dc.png">
 
@@ -158,7 +156,7 @@ To display All reservation we need to connect to the database as admin user and 
 ##### The admin can also see list of resources and delete or add a reource  : 
 <img width="956" alt="image" src="https://user-images.githubusercontent.com/75392302/216608689-16e9bca3-507c-404b-b2bf-82a42a3711dc.png">
 
-To get list fo resources we connect again to the database as admin user and we select all rows of "Ressource" table.
+To get list of resources we connect again to the database as admin user and we select all rows of "Ressource" table.
 
 <img width="518" alt="image" src="https://user-images.githubusercontent.com/75392302/216634810-7b84a20f-a751-4085-9381-0444b5363c84.png">
 
@@ -169,7 +167,6 @@ To get list fo resources we connect again to the database as admin user and we s
 * To add a new resource we click on add icon to get following form
 
 <img width="880" alt="image" src="https://user-images.githubusercontent.com/75392302/216611346-81c33260-c564-4fcb-bdb3-7e9abbe08a4a.png">
-
 
 * We connect again to the database as admin user and we insert the entered information to the Ressource table:
 
@@ -283,7 +280,7 @@ Following the same steps we add the studentFile.log
 <img width="415" alt="image" src="https://user-images.githubusercontent.com/75392302/216717757-5317dd43-4460-4310-9236-5635e84f3fbd.png">
 
 
-Now My project is ready to deploy it using for examples render web site, we just need to get license to migrate our database to oracle database cloud.
+Now My project is ready to deploy it using for example render web site, we just need to get license to migrate our database to oracle database cloud.
 
 ### conclusion:
 `From a personal point of view`, this project allowed me to get new

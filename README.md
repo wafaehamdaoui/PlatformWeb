@@ -204,7 +204,12 @@ Here my user is succefuly added
 
 <img width="983" alt="image" src="https://user-images.githubusercontent.com/75392302/216632804-7085c59f-66d8-4ab9-8d53-838efdb60b6e.png">
 
+##### The admin have the right to see list of resources and modify it:
+<img width="934" alt="image" src="https://user-images.githubusercontent.com/75392302/216594494-19c63349-3153-4552-9acc-a64c4ac6b96e.png">
 
+To get list fo resources we connect again to the database as admin user and we select all rows of "Ressource" table.
+
+<img width="518" alt="image" src="https://user-images.githubusercontent.com/75392302/216634810-7b84a20f-a751-4085-9381-0444b5363c84.png">
 
 
 

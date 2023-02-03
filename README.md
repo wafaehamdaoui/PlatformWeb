@@ -245,16 +245,24 @@ Now going to web interface and try to validate Reservation
 
 Again an error occured because student_user do not have right to Update rows in Demandes table.
 
-#### Now to see all database transactions and modifications we can use Log Files
+#### In the event of a database failure or in the event of a sudden server shutdown, how can we restore the data? 
+#### Answer :to see all database transactions and modifications we can use Log Files
 
 ## Generate Log File For each user :
 
  Log file records all the INSERT, UPDATE, and DELETE query operations performed on a database.
  
- Generate Log File for user_admin : 
+ ### Generate Log File for user_admin : 
+ ### Generate Log File for user_admin : 
+
+Now My project is ready to deploy it using for examples render web site, we just need to get license to migrate our database to oracle database cloud.
+
+### conclusion:
+`From a personal point of view`, this project allowed me to get new
+skills and familiarize myself a little more with oracle ddatabase. This experience will be an asset for the pursuit of my studies and for my professional career.
 
 
-
+                                             Thank you for your attention!
 
 
 

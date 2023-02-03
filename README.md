@@ -132,7 +132,7 @@ By default status reservation is "waiting" but it can be udated only by admin
 
 To get list fo resources we connect again to the database as student user and we select all rows of "Ressource" table.
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/75392302/216602346-f1c754bf-7153-460d-93d8-078a8b7c6529.png">
+<img width="566" alt="image" src="https://user-images.githubusercontent.com/75392302/216610558-0b6e2dcb-33d5-4511-a2d9-342c240878e4.png">
 
 #### As we can see, a student has privileges limited in reading table contents and adding or deleting a reservation.
 
@@ -161,7 +161,12 @@ To display All reservation we need to connect to the database as admin user and 
 
 <img width="639" alt="image" src="https://user-images.githubusercontent.com/75392302/216609824-7302c37d-2664-4f42-ad7f-f479d346426b.png">
 
+* To add a new resource we click on add icon to get following form
 
+<img width="880" alt="image" src="https://user-images.githubusercontent.com/75392302/216611346-81c33260-c564-4fcb-bdb3-7e9abbe08a4a.png">
+
+
+* we connect again to the database as admin user and we insert 
 
 
 

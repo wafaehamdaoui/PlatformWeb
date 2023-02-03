@@ -159,14 +159,51 @@ To display All reservation we need to connect to the database as admin user and 
 
 * To delete a resource we get its id and then we connect to the database always as admin user and the we delete Ressource's row where the id equal to the geted one like following:
 
-<img width="639" alt="image" src="https://user-images.githubusercontent.com/75392302/216609824-7302c37d-2664-4f42-ad7f-f479d346426b.png">
+<img width="654" alt="image" src="https://user-images.githubusercontent.com/75392302/216625364-20afee55-47fe-4457-be43-bb2804f0bed2.png">
 
 * To add a new resource we click on add icon to get following form
 
 <img width="880" alt="image" src="https://user-images.githubusercontent.com/75392302/216611346-81c33260-c564-4fcb-bdb3-7e9abbe08a4a.png">
 
 
-* we connect again to the database as admin user and we insert 
+* We connect again to the database as admin user and we insert the entered information to the Ressource table:
+
+<img width="782" alt="image" src="https://user-images.githubusercontent.com/75392302/216623678-79608729-1bdf-44f9-af7c-0df3257aa02b.png">
+
+##### The admin can also see list of users and delete or add a new user  : 
+<img width="930" alt="image" src="https://user-images.githubusercontent.com/75392302/216624480-1198505e-d939-4cef-a348-eef63efbdff1.png">
+
+* To delete a user we get its id and then we connect to the database always as admin user and the we delete user's row where the id equal to the geted one like following:
+
+<img width="632" alt="image" src="https://user-images.githubusercontent.com/75392302/216624919-40ad7a2c-0ffc-4127-9f12-43470fc09e29.png">
+
+* To add a new user we click on add icon to get a form, here we have two type of users:
+###### User with Base role is a simple user(student) wich have limited permission of access 
+<img width="949" alt="image" src="https://user-images.githubusercontent.com/75392302/216626731-cd9594fe-0751-4925-b345-3e8643715616.png">
+
+In the backend to create this user we connect to the database as admin user who has all privilages and we create a new user, we insert entered information into my_users table, and we affect student_role ,we have already created, to the new user as following :
+
+<img width="809" alt="image" src="https://user-images.githubusercontent.com/75392302/216629476-66842c6c-9811-49b6-b14f-5d16220318e5.png">
+ 
+When we affect student_role to new user, we automatically affect student_role privilages to this user which are : select for all tables and insert & delete for Demandes table .
+
+Here my user is succefuly added
+
+<img width="1080" alt="image" src="https://user-images.githubusercontent.com/75392302/216631107-a88d7b7c-d8e6-4d0f-bc9e-fe8c9597ba7d.png">
+
+###### User with Admin role wich have all permission of access 
+<img width="882" alt="image" src="https://user-images.githubusercontent.com/75392302/216631952-b64a1cff-b1ea-499a-af65-1fdeb387d0b5.png">
+
+In the backend to create this user we connect to the database always as admin user who has all privilages and we create a new user, we insert entered information into my_users table, and we affect admin_role ,we have already created, to the new user as following :
+
+<img width="809" alt="image" src="https://user-images.githubusercontent.com/75392302/216629476-66842c6c-9811-49b6-b14f-5d16220318e5.png">
+ 
+When we affect admin_role to new user, we automatically affect admin_role privilages to this user which are : select,insert,update,delete for all tables.
+
+Here my user is succefuly added
+
+<img width="983" alt="image" src="https://user-images.githubusercontent.com/75392302/216632804-7085c59f-66d8-4ab9-8d53-838efdb60b6e.png">
+
 
 
 

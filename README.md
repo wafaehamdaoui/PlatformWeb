@@ -253,26 +253,35 @@ Again an error occured because student_user do not have right to Update rows in 
 
  Log file records all the INSERT, UPDATE, and DELETE query operations performed on a database.
  
- To generate log file I will use `sloop` statement.
- 
- ### Generate Log File for user_admin : 
- To generate log file for user_admin to execute the following script.
- 
- <img width="609" alt="image" src="https://user-images.githubusercontent.com/75392302/216705190-553c6700-06cb-42d9-b548-90c32f5b7d05.png">
- 
- Here is the operations done by user_admin:
- 
- <img width="740" alt="image" src="https://user-images.githubusercontent.com/75392302/216707069-758d22fa-ae48-490a-b919-8ff271486cae.png">
- 
- ### Generate Log File for user_student :
- 
-To generate log file for user_admin to execute the following script.
+ To generate a log file in an Oracle database, you can follow these steps:
 
-<img width="620" alt="image" src="https://user-images.githubusercontent.com/75392302/216706151-6e8dda4f-75d0-4172-aa2d-0fda51887101.png">
+#### 1.Connect to the database as admin user, using SQL*Plus tool.
+<img width="443" alt="image" src="https://user-images.githubusercontent.com/75392302/216719461-3ddf5a22-605c-49f6-8d26-a408733c1f4a.png">
 
-Here is some operations done by user_student:
+#### 2.Start the database in archive log mode, if it is not already running in that mode. To do this, we use the following command:
+<img width="455" alt="image" src="https://user-images.githubusercontent.com/75392302/216715454-299a98a6-298a-4d4e-a794-ebe9d3b63434.png">
 
- <img width="775" alt="image" src="https://user-images.githubusercontent.com/75392302/216706495-bd63f4fa-e03b-420f-8cab-749a225c0b79.png">
+To solve this error we shutdown instance ant startup it by running the following commands
+
+<img width="385" alt="image" src="https://user-images.githubusercontent.com/75392302/216715851-7dd02966-0eda-4c48-acd2-145137fa6106.png">
+
+Then retry to Start the database in archive log mode
+
+<img width="253" alt="image" src="https://user-images.githubusercontent.com/75392302/216716023-0527d189-a839-492b-9f67-b6a38217d4bf.png">
+
+#### 3. Enable automatic archiving of redo logs using the following command:
+<img width="389" alt="image" src="https://user-images.githubusercontent.com/75392302/216716450-fc04b5df-5c0b-427c-8413-a0ba05b85776.png">
+
+#### 4. Set the destination for the archive log files. To do this, we execute the following command:
+<img width="484" alt="image" src="https://user-images.githubusercontent.com/75392302/216716688-25e99645-03a5-4a68-ac0c-7678d8a2ac54.png">
+
+#### Now consulting the archive list and as we can see the log file is added 
+<img width="369" alt="image" src="https://user-images.githubusercontent.com/75392302/216717302-0bb63865-4354-40ea-ad4f-f312bccafb69.png">
+
+Following the same steps we add the studentFile.log 
+
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/75392302/216717757-5317dd43-4460-4310-9236-5635e84f3fbd.png">
+
 
 Now My project is ready to deploy it using for examples render web site, we just need to get license to migrate our database to oracle database cloud.
 
